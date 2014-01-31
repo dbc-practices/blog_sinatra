@@ -1,0 +1,13 @@
+<div class="container">
+
+<form action="/edit_post/<%=@post.id%>" method="post">
+  Edit your post<br><br>
+    Title: <br><input type="text" name="title" value="<%=@post.title%>"><br>
+    Content: <br><textarea name="content" rows="3" cols="50"><%=@post.content%></textarea><br>
+    Author: <br><input type="text" name="author" value="<%=@post.author%>"><br><br>
+    <input type="submit" name="Submit">
+</form>
+<br><br>
+<a href="/">Home</a><br>
+<a href="/delete_confirm">Delete</a><br>
+</div>

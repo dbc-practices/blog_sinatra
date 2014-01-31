@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Delete post confirmation</h1>
+
+  <form action="/delete/<%=@id%>" method="post">
+    Are you sure you want to delete "<%=@title%>"?<br><br>
+    <input type="checkbox" name="response" value="Yes">Yes
+    <br><br>
+    <input type="submit" name="Submit">
+  </form>
+
+</div>

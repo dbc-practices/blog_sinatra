@@ -1,0 +1,12 @@
+<div class="container">
+  <br><br>
+  Your post!<br><br>
+  Title: <%=@post.title%><br>
+  Content: <%=@post.content%><br>
+  Tags: <%=@tags%><br>
+  Author: <%=@post.author%><br>
+  <br>
+  <a href="/">Home</a><br>
+  <a href="/edit/<%=@post.id%>">Edit</a><br>
+  <a href="/delete_confirm/<%=@post.id%>">Delete</a><br>
+</div>

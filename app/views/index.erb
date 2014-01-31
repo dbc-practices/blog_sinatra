@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Anonymous Blog</h1>
+
+  <form action="/create_post" method="post">
+    Create new post!<br><br>
+    Title: <br><input type="text" name="title"><br>
+    Content: <br><textarea name="content" rows="3" cols="50"></textarea><br>
+    Tags: <br><input type="text" name="tags"><br>
+    Author: <br><input type="text" name="author"><br><br>
+    <input type="submit" name="Submit">
+  </form>
+
+  <% if @tags %>
+  <p>Tag list</p>
+    <% @tags.each do |tag| %>
+      <p><a href="/tag/<%=tag%>"><%=tag%></a></p>
+    <% end %>
+  <% end %>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  List posts by tag "<%=@tag_name%>"
+  <br><br>
+  TITLES:
+  <br><br>
+  <% if @posts %>
+    <% @posts.each_with_index do |post, i| %>
+      <%=i+1%>. <a href="/post/<%=post.id%>"><%=post.title%></a><br>
+    <% end %>
+  <% end %>
+
+  <br><br>
+  <a href="/">Home</a><br>
+</div>
