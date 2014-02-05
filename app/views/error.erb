@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1>Error!</h1>
+  <p>Something wrong with your post</p>
+  <% @errors.each do |key, msg| %>
+    	<%= key %> - <%= msg[0] %> <br>
+  <% end %>
+
+  <br><br>
+  <a href="/">Home</a><br>
+
+</div>

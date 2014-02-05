@@ -10,13 +10,12 @@ class Post < ActiveRecord::Base
     content = args[:content]
     author = args[:author]
     post = Post.create(title: title, content: content, author: author)
-    puts post.valid?
     if post.valid?
       tags = Tag.parse_create_tags(args[:tags])
-      puts tags
+      # puts tags
       tags.each { |tag| post.tags << tag }
-      post
     end
+    post
   end
 
   def self.update_post(args)

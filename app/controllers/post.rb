@@ -23,13 +23,24 @@ end
 
 post '/create_post' do
   puts params
-  @post = Post.create_post(params)
-  if @post.errors.empty?
-    @tags = @post.tags.pluck(:name).join(', ')
-    erb :show_post
-  else
-
+  # puts params[:tags].empty?
+  # redirect to ("/")
+  if params[:tags].empty?
+    @errors = {tag: ["can't be blank!"]}
+    erb :error
+  else  
+    @post = Post.create_post(params)
+    if @post.valid?
+      @tags = @post.tags.pluck(:name).join(', ')
+      erb :show_post
+    else
+      @errors = @post.errors.messages
+      erb :error
+    end
+  end
 end
+
+ # IF EDIT POST INVALID (return FALSE), print message?
 
 post '/edit_post/:id' do
   @post = Post.update_post(params)

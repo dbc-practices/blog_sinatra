@@ -10,8 +10,8 @@
     <input type="submit" name="Submit">
   </form>
 
-  <% if @tags %>
-  <p>Tag list</p>
+  <% if @tags.any? %>
+    <p>Tag list</p>
     <% @tags.each do |tag| %>
       <p><a href="/tag/<%=tag%>"><%=tag%></a></p>
     <% end %>
